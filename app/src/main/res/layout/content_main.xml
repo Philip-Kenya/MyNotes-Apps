@@ -4,17 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
-    <TextView
-        android:id="@+id/textDisplayedValue"
-        android:layout_width="wrap_content"
+    >
 
+    <EditText
+        android:id="@+id/textNoteTitle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/displayValue"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note Title"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCourse"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCourse"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerCourse" />
+
+    <Spinner
+        android:id="@+id/spinnerCourse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textNoteText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Note Text"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerCourse"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/spinnerCourse"
+        app:layout_constraintTop_toBottomOf="@+id/textNoteTitle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
