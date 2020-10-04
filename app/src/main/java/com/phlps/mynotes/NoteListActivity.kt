@@ -26,4 +26,9 @@ class NoteListActivity : AppCompatActivity() {
             startActivity(launchEditNote)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+       ( listNotes.adapter as ArrayAdapter<NoteInfo>).notifyDataSetChanged()
+    }
 }

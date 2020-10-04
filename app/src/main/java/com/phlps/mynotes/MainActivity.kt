@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
         {
             displayNote()
         }
+        else
+        {
+          DataManager.notes.add ( NoteInfo())
+            notePosition=DataManager.notes.lastIndex
+        }
 
     }
 
@@ -73,5 +78,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        saveNote()
+    }
+
+    private fun saveNote() {
+        val note=DataManager.notes[notePosition]
+        note.title=textNoteTitle.text.toString()
+        note.text=textNoteText.text.toString()
+        note.course=spinnerCourse.selectedItem as CourseInfo
+
     }
 }
