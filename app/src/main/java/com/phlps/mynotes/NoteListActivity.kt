@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.content_note_list.*
 
@@ -22,7 +21,7 @@ class NoteListActivity : AppCompatActivity() {
         listNotes.adapter=ArrayAdapter(this, android.R.layout.simple_list_item_1, DataManager.notes)
         listNotes.setOnItemClickListener{ _, _, position, _ ->
             val launchEditNote = Intent(this, MainActivity::class.java)
-            launchEditNote.putExtra(EXTRA_NOTE_POSITION,position)
+            launchEditNote.putExtra(NOTE_POSITION,position)
             startActivity(launchEditNote)
         }
     }
